@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.notification {
+    @apply w-5 h-5 mx-2 fill-blue-500 hover:fill-blue-400 active:fill-blue-600;
+}
+.mobile-menu {
+    @apply flex items-center p-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700;
+}
+.income-menu {
+    @apply w-32 px-3 py-4 my-2.5 font-mono text-lg font-semibold rounded-lg h-24 bg-white dark:bg-gray-800;
+}
