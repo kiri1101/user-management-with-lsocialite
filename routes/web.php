@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Userlist;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,11 @@ Route::middleware(['auth', 'verified'])->group(function() {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/users', function() {
-        return view();
-    })->name('users.list');
+    Route::get('/users', Userlist::class)->name('users.list');
+
+    // Route::get('/users', function() {
+    //     return view('user.list');
+    // })->name('users.list');
 });
 
 require __DIR__.'/auth.php';

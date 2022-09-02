@@ -38,7 +38,7 @@
             <h3 class="mt-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">No notifications available</h3>
         </div>
     </div>
-    <div class="px-3 mb-4 hidden overflow-auto md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
+    <div class="px-3 hidden overflow-auto md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
         <h1 class="mb-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">Users List</h1>
         
         {{-- ****************If empty user's table***************** --}}
