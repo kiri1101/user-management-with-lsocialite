@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('position');
             $table->boolean('status')->default(false);
+            $table->boolean('isAdmin')->default(false);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

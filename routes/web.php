@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Userlist;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,15 +20,19 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function() {
-    Route::get('/dashboard', function() {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::middleware(['isAdmin'])->group(function() {
+        Route::get('/dashboard', function() {
+            return view('dashboard',[
+                'users' => User::latest()->paginate(4)
+            ]);
+        })->name('dashboard');
+        
+        Route::get('/users', Userlist::class)->name('users.list');
+    });
 
-    Route::get('/users', Userlist::class)->name('users.list');
-
-    // Route::get('/users', function() {
-    //     return view('user.list');
-    // })->name('users.list');
+    Route::get('/users/dashboard', function () {
+        return view('user.dashboard');
+    })->name('user.dashboard');
 });
 
 require __DIR__.'/auth.php';

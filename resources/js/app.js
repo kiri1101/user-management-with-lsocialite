@@ -1,5 +1,4 @@
 import './bootstrap';
-import '/node_modules/flowbite/dist/flowbite.js';
 
 import Alpine from 'alpinejs'
  

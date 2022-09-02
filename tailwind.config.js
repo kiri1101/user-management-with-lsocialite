@@ -9,7 +9,6 @@ module.exports = {
         './resources/views/**/*.blade.php',
         './resources/**/*.js',
         './resources/**/*.vue',
-        './node_modules/flowbite/**/*.js',
     ],
 
     theme: {
@@ -38,5 +37,5 @@ module.exports = {
         // }
     },
 
-    plugins: [require('@tailwindcss/forms'), require('flowbite/plugin'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
+    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 };

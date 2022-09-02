@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             'position' => 'React Developer',
             'status' => true,
             'email' => 'neil.sims@hotmail.com',
+            'isAdmin' => true,
             'password' => Hash::make('123123'),
             'created_at' => now(),
             'updated_at' => now()
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
             'position' => 'Designer',
             'status' => true,
             'email' => 'bonnie@hotmail.com',
+            'isAdmin' => false,
             'password' => Hash::make('123123'),
             'created_at' => now(),
             'updated_at' => now()
@@ -56,6 +58,7 @@ class DatabaseSeeder extends Seeder
             'position' => 'UI/UX Engineer',
             'status' => true,
             'email' => 'thomas@hotmail.com',
+            'isAdmin' => false,
             'password' => Hash::make('123123'),
             'created_at' => now(),
             'updated_at' => now()
@@ -67,6 +70,7 @@ class DatabaseSeeder extends Seeder
             'position' => 'SEO Specialist',
             'status' => false,
             'email' => 'leslie@hotmail.com',
+            'isAdmin' => false,
             'password' => Hash::make('123123'),
             'created_at' => now(),
             'updated_at' => now()

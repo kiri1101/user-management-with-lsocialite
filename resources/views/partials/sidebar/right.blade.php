@@ -1,4 +1,4 @@
-<div class="px-3 py-4 overflow-y-auto bg-white rounded-xl dark:bg-gray-800">
+<div class="px-3 py-4 overflow-y-auto bg-white shadow rounded-xl dark:bg-gray-800">
     <ul class="hidden space-y-2 font-mono md:block">
         <li @if(url()->current()==route('dashboard')) class="bg-gray-100 rounded-md shadow" @endif>
             <a href="{{ route('dashboard') }}" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
@@ -84,7 +84,7 @@
         </li>
     </ul>
 </div>
-<div class="justify-center hidden gap-3 px-3 py-4 overflow-y-auto text-center bg-white md:block rounded-xl dark:bg-gray-800">
+<div class="justify-center hidden gap-3 px-3 py-4 overflow-y-auto text-center bg-white shadow md:block rounded-xl dark:bg-gray-800">
     <p class="font-bold text-gray-700 uppercase text-md">{{ Config::get('app.name'); }}</p>
     <span class="text-sm text-gray-400">version 1.03.231.24</span>
 </div>

@@ -33,6 +33,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'position' => 'string',
         'status' => 'boolean',
         'email' => 'string',
+        'isAdmin' => 'boolean',
         'email_verified_at' => 'datetime',
     ];
 }
