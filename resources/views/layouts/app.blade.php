@@ -37,14 +37,14 @@
             </aside>
 
             <!-- Page Content -->
-            <main class="grid w-auto grid-cols-1 gap-3 mx-3 md:grid-cols-2">
+            <main class="grid w-auto grid-cols-1 gap-4 mx-3 md:grid-cols-2">
                 {{ $slot }}
             </main>
 
-            {{-- Right Sidebar --}}
+            {{-- Left Sidebar --}}
             @if (url()->current()==route('dashboard'))
-                <aside class="hidden w-16 md:block md:w-[12rem]" aria-label="Right-Sidebar">
-                    <div class="flex flex-col">
+                <aside class="hidden overflow-hidden lg:block" aria-label="Right-Sidebar">
+                    <div class="flex flex-col lg:w-52">
                         @include('partials.sidebar.left')
                     </div>
                 </aside>

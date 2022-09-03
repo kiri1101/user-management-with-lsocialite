@@ -17,9 +17,18 @@ return new class extends Migration
             $table->id();
             $table->string('username');
             $table->string('name');
-            $table->string('position');
+            $table->string('position')->nullable();
             $table->boolean('status')->default(false);
             $table->boolean('isAdmin')->default(false);
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password')->nullable();
+            $table->string('profile_photo_path')->nullable();
+            $table->string('provider_id')->nullable();
+            $table->string('provider_name')->nullable();
+            $table->string('github_token')->nullable();
+            $table->string('github_refresh_token')->nullable();
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -35,6 +44,7 @@ return new class extends Migration
      */
     public function down()
     {
+        
         Schema::dropIfExists('users');
     }
 };

@@ -71,9 +71,8 @@ class Userlist extends Component
             session()->flash('success', 'User created successfully!');
             return redirect(request()->header('Referer'));
         } catch (\Throwable $th) {
-            dd($th);
-            // session()->flash('warning', 'Failed to create new user!');
-            // return redirect(request()->header('Referer'));
+            session()->flash('warning', 'Failed to create new user!');
+            return redirect(request()->header('Referer'));
         }
     }
 

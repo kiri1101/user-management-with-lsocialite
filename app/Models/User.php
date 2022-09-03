@@ -13,6 +13,13 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+
+    /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
@@ -34,6 +41,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'status' => 'boolean',
         'email' => 'string',
         'isAdmin' => 'boolean',
+        'provider_id' => 'string',
+        'provider_name' => 'string',
+        'profile_photo_path' => 'string',
+        'github_token' => 'string',
+        'github_refresh_token' => 'string',
         'email_verified_at' => 'datetime',
     ];
 }

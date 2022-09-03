@@ -11,7 +11,7 @@
         </h2>
     </x-slot> --}}
 
-    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
+    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:min-w-[255px] rounded-xl bg-white dark:bg-gray-800">
         <div class="overflow-hidden">
             <h1 class="mb-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">Company Facts</h1>
             <h3 class="mb-5 font-mono text-xs font-semibold text-gray-400 md:text-sm dark:text-gray-200">Employees</h3>
@@ -20,7 +20,7 @@
             </div>                    
         </div>
     </div>
-    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
+    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:min-w-[255px] rounded-xl bg-white dark:bg-gray-800">
         <div class="overflow-hidden">
             <h1 class="mb-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">Statistics</h1>
             <div class="chart-container" style="position: relative; height:46vh; width:30vw">
@@ -28,7 +28,7 @@
             </div>
         </div>        
     </div>
-    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
+    <div class="px-3 hidden md:block py-4 h-[360px] w-full md:min-w-[255px] rounded-xl bg-white dark:bg-gray-800">
         <h1 class="mb-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">Notifications</h1>
         <div class="flex flex-col items-center justify-center w-full h-64 m-auto overflow-hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 fill-lime-400 stroke-green-300" data-name="Layer 1" viewBox="0 0 128 128">
@@ -38,7 +38,7 @@
             <h3 class="mt-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">No notifications available</h3>
         </div>
     </div>
-    <div class="px-3 hidden overflow-auto md:block py-4 h-[360px] w-full md:w-[436px] rounded-xl bg-white dark:bg-gray-800">
+    <div class="px-3 hidden overflow-auto md:block py-4 h-[360px] w-full md:min-w-[255px] rounded-xl bg-white dark:bg-gray-800">
         <h1 class="mb-1 font-mono text-sm font-semibold text-gray-600 md:text-md dark:text-gray-400">Users List</h1>
 
         <table class="w-full mt-4 font-mono text-sm text-left text-gray-500 rounded-lg dark:text-gray-400" aria-describedby="User's Table">
@@ -56,11 +56,11 @@
             </thead>
             <tbody>
                 @forelse ($users as $user)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <tr class="text-sm bg-white border-b lg:text-base dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                             <img class="w-10 h-10 rounded-full" src="https://api.lorem.space/image/face?w=150&h=150" alt="Jese image">
                             <div class="pl-3">
-                                <div class="text-base font-semibold">{{ $user->name }}</div>
+                                <div class="font-semibold">{{ $user->name }}</div>
                                 <div class="font-normal text-gray-500">{{ $user->email }}</div>
                             </div>  
                         </th>
@@ -82,7 +82,7 @@
             </tbody>
         </table>
         @if ($users)
-            <div class="mx-2 text-sm md:text-base">{{ $users->links() }}</div>
+            <div class="mx-2 text-sm lg:text-base">{{ $users->links() }}</div>
         @endif
     </div>
     

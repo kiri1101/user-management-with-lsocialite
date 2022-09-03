@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .notification {
     @apply w-5 h-5 mx-2 fill-blue-500 hover:fill-blue-400 active:fill-blue-600;
 }
@@ -14,4 +13,8 @@
 
 .error {
     @apply text-red-500 text-sm font-mono;
+}
+
+.details {
+    @apply flex justify-center gap-3;
 }
