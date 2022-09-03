@@ -62,3 +62,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instructions
+
+Credentials for acces to admin panel are;
+email: neil.sims@hotmail.com
+password: 123123
+
+Make sure you setup CLIENT_ID and CLIENT_KEY in your environment file for github and google respectively inorder to use their social login feature.
+
+Feel free to report any issues and bugs you might discover.

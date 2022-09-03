@@ -15,9 +15,9 @@ class LoginController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -25,58 +25,22 @@ class LoginController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-        $githubUser = Socialite::driver('github')->user();
+        $providerUser = Socialite::driver($provider)->user();
  
         $user = User::updateOrCreate([
-            'provider_id' => $githubUser->id,
+            'provider_id' => $providerUser->id,
         ], [
-            'username' => $githubUser->nickname,
-            'name' => $githubUser->name,
-            'email' => $githubUser->email,
-            'profile_photo_path' => $githubUser->avatar,
-            'provider_name' => 'Github',
+            'username' => $providerUser->nickname,
+            'name' => $providerUser->name,
+            'email' => $providerUser->email,
+            'profile_photo_path' => $providerUser->avatar,
+            'provider_name' => $provider,
             'email_verified_at' => now(), 
             'status' => true,
-            'github_token' => $githubUser->token,
-            'github_refresh_token' => $githubUser->refreshToken,
-        ]);
-     
-        Auth::login($user);
-     
-        return redirect()->route('user.dashboard');
-    }
-
-    /**
-     * Redirect the user to Google authentication page.
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function redirectToGoogleProvider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    /**
-     * Obtain the user information from Google
-     * 
-     * @return \Illuminate\Http\Response
-     */
-    public function handleGoogleProviderCallback()
-    {
-        $googleUser = Socialite::driver('google')->user();
- 
-        $user = User::updateOrCreate([
-            'provider_id' => $googleUser->id,
-        ], [
-            'username' => $googleUser->nickname,
-            'name' => $googleUser->name,
-            'email' => $googleUser->email,
-            'profile_photo_path' => $googleUser->avatar,
-            'provider_name' => 'Google',
-            'email_verified_at' => now(), 
-            'status' => true,
+            'github_token' => $providerUser->token,
+            'github_refresh_token' => $providerUser->refreshToken,
         ]);
      
         Auth::login($user);

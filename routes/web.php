@@ -23,8 +23,8 @@ Route::get('/', function () {
 });
 
 //Github Login
-Route::get('/auth/redirect', [LoginController::class, 'redirectToProvider']);
-Route::get('/auth/github/callback', [LoginController::class, 'handleProviderCallback']);
+Route::get('/auth/redirect/{provider}', [LoginController::class, 'redirectToProvider']);
+Route::get('/auth/callback/{provider}', [LoginController::class, 'handleProviderCallback']);
 
 //Google Login
 Route::get('/auth/google/redirect', [LoginController::class, 'redirectToGoogleProvider']);
